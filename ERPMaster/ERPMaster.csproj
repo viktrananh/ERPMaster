@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A027E84C-E7F2-4E3F-B753-BFB8FF5A5F54}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ERPMaster</RootNamespace>
+    <AssemblyName>ERPMaster</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomerDLL">
+      <HintPath>..\..\CustomerDLL\CustomerDLL\bin\Debug\CustomerDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Design, Version=14.1.0.37, Culture=neutral, PublicKeyToken=90f470f34c89ccaf, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.Layout, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.TreeGX, Version=14.1.0.37, Culture=neutral, PublicKeyToken=055db68f670cfeab, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WarehouseDll">
+      <HintPath>..\..\WarehouseDll\WarehouseDll\bin\Debug\WarehouseDll.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fmMainNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmMainNew.Designer.cs">
+      <DependentUpon>fmMainNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyStyte\RedNodeRenderer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Cutomer\fmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Cutomer\fmCustomer.Designer.cs">
+      <DependentUpon>fmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Cutomer\fmModelChilds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Cutomer\fmModelChilds.Designer.cs">
+      <DependentUpon>fmModelChilds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Cutomer\fmModelLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Cutomer\fmModelLine.Designer.cs">
+      <DependentUpon>fmModelLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Cutomer\ucListCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Cutomer\ucListCustomer.Designer.cs">
+      <DependentUpon>ucListCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Cutomer\ucListModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Cutomer\ucListModel.Designer.cs">
+      <DependentUpon>ucListModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PO\fmPOOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PO\fmPOOrder.Designer.cs">
+      <DependentUpon>fmPOOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PO\fmWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PO\fmWork.Designer.cs">
+      <DependentUpon>fmWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PO\ucPOOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PO\ucPOOrder.Designer.cs">
+      <DependentUpon>ucPOOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\fmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fmMain.Designer.cs">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PO\ucListPO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PO\ucListPO.Designer.cs">
+      <DependentUpon>ucListPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PO\ucListWork.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PO\ucListWork.Designer.cs">
+      <DependentUpon>ucListWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PO\ucPOOrder_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PO\ucPOOrder_1.Designer.cs">
+      <DependentUpon>ucPOOrder_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Root\fmOriginal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Root\fmOriginal.Designer.cs">
+      <DependentUpon>fmOriginal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Root\ucOriginal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Root\ucOriginal.Designer.cs">
+      <DependentUpon>ucOriginal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ucDesk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ucDesk.Designer.cs">
+      <DependentUpon>ucDesk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Warehouse\Bill\fmBillExportMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Warehouse\Bill\fmBillExportMaterial.Designer.cs">
+      <DependentUpon>fmBillExportMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Warehouse\Bill\IMP\fmDeclarationMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Warehouse\Bill\IMP\fmDeclarationMaterial.Designer.cs">
+      <DependentUpon>fmDeclarationMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Warehouse\Bill\IMP\fmImportMatrial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Warehouse\Bill\IMP\fmImportMatrial.Designer.cs">
+      <DependentUpon>fmImportMatrial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Warehouse\Bill\IMP\fmRQImpMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Warehouse\Bill\IMP\fmRQImpMaterial.Designer.cs">
+      <DependentUpon>fmRQImpMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Warehouse\Bill\ucWarehouseMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Warehouse\Bill\ucWarehouseMaterial.Designer.cs">
+      <DependentUpon>ucWarehouseMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Warehouse\FPBillGoods\fmFPBillRequestExportCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Warehouse\FPBillGoods\fmFPBillRequestExportCus.Designer.cs">
+      <DependentUpon>fmFPBillRequestExportCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Warehouse\FPBillGoods\fmFPBillReturnExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Warehouse\FPBillGoods\fmFPBillReturnExport.Designer.cs">
+      <DependentUpon>fmFPBillReturnExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Warehouse\FPBillGoods\ucFPBillExportCus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Warehouse\FPBillGoods\ucFPBillExportCus.Designer.cs">
+      <DependentUpon>ucFPBillExportCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Warehouse\FPBillGoods\ucLsFPBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Warehouse\FPBillGoods\ucLsFPBill.Designer.cs">
+      <DependentUpon>ucLsFPBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Warehouse\FPBillGoods\ucWarehouse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Warehouse\FPBillGoods\ucWarehouse.Designer.cs">
+      <DependentUpon>ucWarehouse.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fmMainNew.resx">
+      <DependentUpon>fmMainNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\Cutomer\fmCustomer.resx">
+      <DependentUpon>fmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Cutomer\fmModelChilds.resx">
+      <DependentUpon>fmModelChilds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Cutomer\fmModelLine.resx">
+      <DependentUpon>fmModelLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Cutomer\ucListCustomer.resx">
+      <DependentUpon>ucListCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Cutomer\ucListModel.resx">
+      <DependentUpon>ucListModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PO\fmPOOrder.resx">
+      <DependentUpon>fmPOOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PO\fmWork.resx">
+      <DependentUpon>fmWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PO\ucPOOrder.resx">
+      <DependentUpon>ucPOOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fmMain.resx">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PO\ucListPO.resx">
+      <DependentUpon>ucListPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PO\ucListWork.resx">
+      <DependentUpon>ucListWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PO\ucPOOrder_1.resx">
+      <DependentUpon>ucPOOrder_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Root\fmOriginal.resx">
+      <DependentUpon>fmOriginal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Root\ucOriginal.resx">
+      <DependentUpon>ucOriginal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ucDesk.resx">
+      <DependentUpon>ucDesk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Warehouse\Bill\fmBillExportMaterial.resx">
+      <DependentUpon>fmBillExportMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Warehouse\Bill\IMP\fmDeclarationMaterial.resx">
+      <DependentUpon>fmDeclarationMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Warehouse\Bill\IMP\fmRQImpMaterial.resx">
+      <DependentUpon>fmRQImpMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Warehouse\Bill\ucWarehouseMaterial.resx">
+      <DependentUpon>ucWarehouseMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Warehouse\FPBillGoods\fmFPBillRequestExportCus.resx">
+      <DependentUpon>fmFPBillRequestExportCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Warehouse\FPBillGoods\ucFPBillExportCus.resx">
+      <DependentUpon>ucFPBillExportCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Warehouse\FPBillGoods\ucLsFPBill.resx">
+      <DependentUpon>ucLsFPBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Warehouse\FPBillGoods\ucWarehouse.resx">
+      <DependentUpon>ucWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Purchase Order30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Order30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dynamics 365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dynamics 365_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Supplier30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Purchase Order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Purchase Order301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Order301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database Daily Import40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database Daily Import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\Work\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save1_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unavailable_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save1_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Supplier301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow Pointing Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow Pointing Left1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available Updates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Read.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Microsoft Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Attach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Secure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\globe_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Copy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Secure1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magnifying Glass Tilted Left25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Microsoft Excel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export_1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
